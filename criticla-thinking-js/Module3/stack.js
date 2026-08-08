@@ -27,7 +27,7 @@ class Stack{
   }
 
   print(){
-    console.log(this.items)
+    console.log(this.items.slice().reverse().join(">"))
   }
 
 }
