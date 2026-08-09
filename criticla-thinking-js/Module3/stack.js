@@ -1,4 +1,4 @@
-class Stack{
+export default class Stack{
   constructor(){
     this.items = [];
   }
@@ -32,16 +32,16 @@ class Stack{
 
 }
 
-const stack = new Stack();
+// const stack = new Stack();
 
-console.log(stack.peek())
-console.log(stack.isEmpty())
+// console.log(stack.peek())
+// console.log(stack.isEmpty())
 
-stack.push(10)
-stack.push(20)
-stack.push(30)
+// stack.push(10)
+// stack.push(20)
+// stack.push(30)
 
-stack.print();
-console.log(stack.peek())
+// stack.print();
+// console.log(stack.peek())
 
-console.log(stack.pop())
+// console.log(stack.pop())
