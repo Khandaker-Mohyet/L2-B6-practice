@@ -21,4 +21,15 @@ const otherInfo = {
 
 const updatedUser = { ...user, ...otherInfo };
 
-console.log(updatedUser);
+// console.log(updatedUser);
+
+
+// rest operatore
+
+const sendInvite = (...firends: string[]) => {
+  firends.forEach((friend: string) => { 
+    console.log(`Sending invite to ${friend}`)
+  });
+}
+
+sendInvite('Alice', 'Bob', 'Charlie', 'David', 'Eve');
