@@ -30,3 +30,55 @@ const gerUserInfo=(user: NormalUser | AdminUser)=>{
 }
 
 // gerUserInfo({name: "Normal", role: "Admin"})
+
+
+// OOP: instance of type gard type narrowing
+
+class Person {
+  name: string;
+
+  constructor(name: string){
+    this.name= name;
+  }
+
+  getSleep(numOfhours: number){
+    console.log(`${this.name} daily ${numOfhours} hours Gumai`)
+  }
+}
+
+class Students extends Person{
+
+  doStudy(numOfhours: number){
+    console.log(`${this.name} daily ${numOfhours} hours study kore`)
+  }
+
+}
+
+// const student3 = new Students("Mohyet")
+
+// student3.getSleep(8)
+
+class Teachers extends Person{
+
+  doClass(numOfhours: number){
+    console.log(`${this.name} daily ${numOfhours} hours Class nay`)
+  }
+
+}
+
+const getUserInfo = (user:Person)=>{
+  if(user instanceof Students){
+    user.doStudy(10)
+  }else if(user instanceof Teachers){
+    user.doClass(5)
+  }else{
+    user.getSleep(8)
+  }
+}
+
+const student4 = new Students("Khandaker Mohyet")
+
+getUserInfo(student4)
+
+
+
