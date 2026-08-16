@@ -5,7 +5,7 @@ class BankAccount {
 
   constructor(userId: number, name: string, userBalance: number) {
     this.userId = userId;
-    this.name = name
+    this.name = name;
     this.userBalance = userBalance;
   }
 
