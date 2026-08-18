@@ -43,3 +43,22 @@ class Person {
     return `Name: ${this.name}, Age: ${this.age}`;
   }
 }
+
+// Provlem- 4
+
+type Item = {
+  title: string;
+  rating: number;
+};
+
+const filterByRating = (items: Item[]): Item[] => {
+  return items.filter((item) => item.rating >= 4);
+};
+
+const items: Item[] = [
+  { title: "Movie A", rating: 4.5 },
+  { title: "Movie B", rating: 3.2 },
+  { title: "Movie C", rating: 4.8 },
+];
+
+// console.log(filterByRating(items));
