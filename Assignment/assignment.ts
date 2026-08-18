@@ -83,3 +83,79 @@ const users = [
 ];
 
 // console.log(filterActiveUsers(users));
+
+// Provlem 6 
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+const printBookDetails = (book: Book): void => {
+  console.log(
+    `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${book.isAvailable ? "Yes" : "No"}`
+  );
+};
+
+const myBook: Book = {
+  title: 'The Great Gatsby',
+  author: 'F. Scott Fitzgerald',
+  publishedYear: 1925,
+  isAvailable: true,
+};
+
+// printBookDetails(myBook);
+
+// Provlem - 7
+
+const getUniqueValues = (
+  arr1: (string | number)[],
+  arr2: (string | number)[]
+): (string | number)[] => {
+
+  const result: (string | number)[] = [];
+
+  const addUnique = (value: string | number) => {
+    for (let i = 0; i < result.length; i++) {
+      if (result[i] === value) {
+        return;
+      }
+    }
+
+    result[result.length] = value;
+  };
+
+  for (let i = 0; i < arr1.length; i++) {
+    addUnique(arr1[i]);
+  }
+
+  for (let i = 0; i < arr2.length; i++) {
+    addUnique(arr2[i]);
+  }
+
+  return result;
+};
+
+
+// Provlem - 8
+type Product = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+
+const calculateTotalPrice = (products: Product[]): number => {
+  return products.reduce((total, product) => {
+    const price = product.price * product.quantity;
+
+    if (product.discount !== undefined) {
+      const discountAmount = price * (product.discount / 100);
+      return total + (price - discountAmount);
+    }
+
+    return total + price;
+  }, 0);
+};
